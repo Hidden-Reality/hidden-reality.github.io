@@ -3,46 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Reality</title>
+    <title>Hidden Reality Linktree</title>
+    <link rel="icon" href="linktree/favicon.png" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hidden-reality.github.io/">
+    <meta property="og:title" content="Hidden Reality Linktree">
+    <meta property="og:description" content="Connect with AliceD across various platforms">
+    <meta property="og:image" content="https://hidden-reality.github.io/linktree/embed.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="hidden-reality.github.io/">
+    <meta property="twitter:title" content="Hidden Reality Linktree">
+    <meta property="twitter:description" content="Connect with Hidden Reality across various platforms">
+    <meta property="twitter:image" content="https://hidden-reality.github.io/linktree/embed.png">
     <style>
         body, html {
-            height: 100%;
             margin: 0;
-            overflow: hidden;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
         }
-        #bg-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-        }
-        .content {
-            position: relative;
-            height: 100vh;
-            text-align: center;
+        body {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: background-image 1s ease-in-out;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
         }
         .logo {
-            max-width: 25%;
-            max-height: 25%;
-            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+            width: 512px;
+            height: 271px;
+            margin: 0 auto 10px;
+            background-image: url('linktree/logo.webp');
+            background-size: cover;
+            border-radius: 20%;
+        }
+        h1, p {
+            color: #fff;
+        }
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .link {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+        }
+
+        .link-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .link:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding-top: 30px;
+            }
+            .links {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-<video autoplay muted loop id="bg-video">
-    <source src="source/background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-
-<div class="content">
-    <img src="source/logo.webp" alt="Hidden Reality Logo" class="logo">
+<div class="container">
+    <div class="logo"></div>
+    <p id="description">European rave community <br>with focus on the underground, dark, eerie and trippy side of things</p>
+    <div class="links">
+        <a href="https://vrc.group/HIDDEN.9324" class="link">
+            <img src="https://www.google.com/s2/favicons?domain=vrchat.com" alt="VRChat" class="link-icon">
+            <span>VRChat Group</span>
+        </a>
+        <a href="https://x.com/HRdotnet" class="link">
+            <img src="https://www.google.com/s2/favicons?domain=x.com" alt="X (Twitter)" class="link-icon">
+            <span>X (Twitter)</span>
+        </a>
+        <a href="https://bsky.app/profile/hidden-reality.net" class="link">
+            <img src="https://www.google.com/s2/favicons?domain=bsky.app" alt="Bluesky" class="link-icon">
+            <span>Bluesky</span>
+        </a>
+        <a href="https://www.twitch.tv/hiddenrealityvr" class="link">
+            <img src="https://www.google.com/s2/favicons?domain=twitch.tv" alt="Twitch" class="link-icon">
+            <span>Twitch</span>
+        </a>
+        <a href="https://www.instagram.com/hiddenrealityvr/" class="link">
+            <img src="https://www.google.com/s2/favicons?domain=instagram.com" alt="Instagram" class="link-icon">
+            <span>Instagram</span>
+        </a>
+        <a href="https://www.youtube.com/@HiddenRealityVR" class="link">
+            <img src="https://www.google.com/s2/favicons?domain=youtube.com" alt="YouTube" class="link-icon">
+            <span>YouTube</span>
+        </a>
+        <a href="https://hidden-reality.net" class="link" target="_blank">
+            <img src="https://www.google.com/s2/favicons?domain=discord.com" alt="Discord" class="link-icon">
+            <span>Join our Discord</span>
+        </a>
+    </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+// Background image slideshow
+        const backgroundImages = [
+            'background/1.webp',
+            'background/2.webp',
+            'background/3.webp',
+            'background/4.webp',
+            'background/5.webp',
+            'background/6.webp',
+            'background/7.webp',
+            'background/8.webp',
+            'background/9.webp',
+            'background/10.webp'
+// Add more image URLs as needed
+        ];
+        let currentImageIndex = 0;
+        function changeBackgroundImage() {
+            const newImage = new Image();
+            newImage.onload = function() {
+                document.body.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+                currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+            };
+            newImage.onerror = function() {
+                console.error(`Failed to load image: ${backgroundImages[currentImageIndex]}`);
+                currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+                changeBackgroundImage(); // Try the next image
+            };
+            newImage.src = backgroundImages[currentImageIndex];
+        }
+
+// Change background image every 5 seconds
+        setInterval(changeBackgroundImage, 5000);
+        changeBackgroundImage();}) // Initial call to set first background
+
+</script>
 </body>
 </html>
