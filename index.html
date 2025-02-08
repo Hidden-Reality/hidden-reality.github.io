@@ -46,6 +46,7 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             margin: 20px auto; /* Centers container and adds some space */
+            z-index: 1000;
         }
         .logo {
             width: 512px;
@@ -114,9 +115,24 @@
                 grid-template-columns: 1fr;
             }
         }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 5px 0; /* changed to only top/bottom padding */
+            background: rgba(40, 40, 45, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            z-index: 1001;
+        }
     </style>
 </head>
 <body>
+<div class="footer">4liceD © 2025 - Contact: 4liced@4liced.com</div>
 <div class="container">
     <div class="logo"></div>
     <p id="description" class="description">European virtual rave community with focus on the underground, dark, eerie and trippy side of things</p>
