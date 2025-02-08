@@ -1,0 +1,4 @@
+compress_html:
+  comments: ["<!-- ", "-->"]
+  blanklines: false
+  clippings: all
