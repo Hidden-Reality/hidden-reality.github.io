@@ -49,11 +49,14 @@
             z-index: 1000;
         }
         .logo {
-            width: 512px;
-            height: 271px;
+            width: 100%; /* Make it responsive */
+            max-width: 512px; /* Won't get bigger than original */
+            aspect-ratio: 512/271; /* Maintains exact proportions */
             margin: 0 auto 10px;
             background-image: url('linktree/logo.webp');
-            background-size: cover;
+            background-size: contain; /* Changed from cover to contain */
+            background-position: center; /* Ensures centering */
+            background-repeat: no-repeat;
             border-radius: 20%;
         }
         h1 {
